@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div class="wrapper">
+
+    </div> -->
+    <div class="box">
+
+    </div>
+
+    <div class="mnu">
+        <div class="icon">
+            <a href="#static"><i class="fas fa-home"></i></a>
+        </div>
+        <ul>
+            <li><button><a href="#static">Static</a></button></li>
+            <li><button><a href="#abs">Absolute</a></button></li>
+            <li><button><a href="#rel">Relative</a></button></li>
+            <li><button><a href="#fix">Fixed</a></button></li>
+            <li><button><a href="#stic">Sticky</a></button></li>
+            <li><button><a href="#stick">Сводка</a></button></li>
+        </ul>
+    </div>
+
+
+    <div class="container">
+        <section id="static" class="">
+
+            <div>
+                <h2>
+                    POSITION STATIC
+                </h2>
+                <p>
+                    <strong>Статически расположенные</strong> элементы - это элементы, которым не назначено <b>css</b>
+                    свойство <b>position</b>.
+                    Элементы старницы располагаются в документе в соответствии с HTML-разметкой страницы.
+                </p>
+                <p>Попытка использовать свойства <b> left, top, right и bottom</b> ничего не меняет.</p>
+                <p>Посмотрим на примере нескольких элементов в виде четырех цветных квадратиков.</p>
+                <p>В данном случае <b>css</b> свойство <b> position</b> <i>не изменено</i>.</p>
+                <div class="demo grey"></div>
+                <div class="demo yellow"></div>
+                <div class="demo green"></div>
+                <div class="demo blue"></div>
+                <div class="demo red"></div>
+
+            </div>
+        </section>
+
+        <section id="abs" class="">
+
+            <div>
+                <h2>
+                    POSITION ABSOLUTE
+                </h2>
+                <p>
+                    <strong>Абсолютно позиционированным</strong> элементам назначается место в системе
+                    координат окна браузера или ближайшего предка с <strong> position fixed, relative или
+                        absolute</strong>.
+                    Если у родителя значение <b> position</b> установлено как <b>static или родителя нет</b>, то отсчет
+                    координат
+                    ведется от края окна браузера. Если у родителя значение position задано как <b> fixed, relative или
+                    absolute</b>, то отсчет
+                    координат ведется от края
+                    родительского элемента. <br>
+                    При этом место, которое занимал
+                    элемент освобождается и его занимают соседние элементы. Происходит наслоение,
+                    уровнем управяет свойство <b> z-index</b>.
+                </p>
+                <p>Положение элемента задается свойствами left, top, right и bottom</p>
+                <p>Поэкспериментируем со свойствами position на примере квадратика с зеленой обводкой, чтобы его было
+                    лучше заметно, мы покрасили его фон в серый цвет. В этом примере сделана серая обводка родительского элемента для наглядности системы координат.<br>
+                </p>
+                <p>
+                    <b>
+                        position: absolute;<br>
+                        bottom: 15px;<br>
+                        left: 25px;<br>
+                    </b>
+                </p>
+                <div style="position: relative; border:#ccc solid 1px">
+                    <div class="demo grey"></div>
+                    <div class="demo yellow"></div>
+                    <div class="absolute demo green"></div>
+                    <div class="demo blue"></div>
+                    <div class="demo red"></div>
+                </div>
+            </div>
+        </section>
+        <section id="rel" class="">
+            <div>
+                <h2>
+                    POSITION RELATIVE
+                </h2>
+                <p>
+                    <strong>Относительно позиционированны</strong> м элементам назначается место <b>в системе координат
+                        своего первоначального положения</b>. При этом место,
+                    которое занимал элемент остается заблокированным.
+                </p>
+                <p>Происходит наслоение, уровнем управяет свойство <b> z-index</b>.</p>
+                <p>Положение элемента задается свойствами <b> left, top, right и bottom</b></p>
+                <p>Теперь изменим значение position на <b>relative</b>, а остальные свойства оставим<br></p>
+                <p>
+                    <b>
+                        position: relative;<br>
+                        bottom: 15px;<br>
+                        left: 25px;<br>
+                    </b>
+                </p>
+                <div class="demo grey"></div>
+                <div class="demo yellow"></div>
+                <div class="relative demo green"></div>
+                <div class="demo blue"></div>
+                <div class="demo red"></div>
+            </div>
+
+        </section>
+        <section id="fix" class="">
+            <div>
+                <h2>
+                    POSITION FIXED
+                </h2>
+                <p>
+                    <strong>Фиксировано позиционированным</strong>  элементам назначается положение <b>в системе координат экрана</b>. Элемент
+                    привязывается к указанной свойствами <b>left, top, right и bottom</b>  точке на
+                    экране и не меняет своего положения при прокрутке веб-страницы. При этом место
+                    элемента освобождается и его занимают соседние элементы. Происходит наслоение,
+                    уровнем управяет свойство <b> z-index</b>.
+                </p>
+                <p>Зададим начало координат для нашего элемента по середине экрана. Он будет там оставаться при
+                    прокрутке страницы
+                </p>
+                <p>
+                    <b>
+                        position: fixed;<br>
+                        top: 50vh;<br>
+                        right: 50vw;<br>
+                    </b>
+                </p>
+                <div class="demo grey"></div>
+                <div class="demo yellow"></div>
+                <div class="fixed demo green"></div>
+                <div class="demo blue"></div>
+                <div class="demo red"></div>
+            </div>
+
+        </section>
+
+        <section id="stic" class="">
+            <div>
+                <h2>
+                    POSITION STICKY
+                </h2>
+                <p>
+                    У <strong>Sticky позиционированных</strong> элементов расположение не меняется до тех пор, пока его
+                    движение вместе со страницей не будет
+                    <b> заблокировано на экране при пересечении установленного значения <em>top, bottom, left,
+                            right</em></b>. Кроме всего, перемещение
+                    ограничивается границами родительского элемента.
+                    Место, которое он занимал не освобождается. Элемент перекрывает соседние. Уровнем наложения управяет свойство <b>z-index.</b>
+                </p>
+
+                <p>В последнем эксперименте у нас будет два зеленых квадратика с <b>position: sticky</b>. Создадим дополнительный
+                    квадратик вне данного блока страницы. Таким образом мы увидим разницу в ограничениях на перемещение
+                    элементов имеющих одинаковые свойства, но имеющие разных родителей. </p>
+                <p>
+                    <b>
+                        position: sticky;<br>
+                        top: 120px;<br>
+                        bottom: 150px;<br>
+                    </b>
+                </p>
+                <div class="demo grey"></div>
+                <div class="demo yellow"></div>
+                <div class="sticky demo green"></div>
+                <div class="demo blue"></div>
+                <div class="demo red"></div>
+            </div>
+
+        </section>
+        <div class="sticky demo green"></div>
+        <section id="stick" class="">
+            <div>
+                <h2>
+                    СВОДНАЯ ТАБЛИЦА
+                </h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Position</th>
+                            <th>Система координат</th>
+                            <th>Первоначальное место</th>
+                            <th>Влияние на другие элементы</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>
+                                Static
+                            </th>
+                            <td>
+                                Не применяется
+                            </td>
+                            <td>
+                                Остается занятым
+                            </td>
+                            <td>
+                                Занимает обычное место, отталкивает соседние элементы
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Absolute
+                            </th>
+                            <td>
+                                Границы экрана или <br> ближайшего предка с position: fixed, relative или absolute
+                            </td>
+                            <td>
+                                Освобождается, не влияет на положение соседних элементов
+                            </td>
+                            <td>
+                                Игнорируется другими элементами <br> на странице, происходит наслаивание
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Relative
+                            </th>
+                            <td>
+                                Первоначальное место положения
+                            </td>
+                            <td>
+                                Остается занятым
+                            </td>
+                            <td>
+                                Перемещаясь наслаивается на соседние элементы, <br> первоначальное место (будучи пустым)
+                                отталкивает
+                                соседние элементы
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Fixed
+                            </th>
+                            <td>
+                                Границы экрана
+                            </td>
+                            <td>
+                                Освобождается, не влияет на положение соседних элементов
+                            </td>
+                            <td>
+                                Игнорируется другими элементами <br> на странице, происходит наслаивание
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Sticky
+                            </th>
+                            <td>
+                                Границы экрана, перемещения только в пределах границ родителя
+                            </td>
+                            <td>
+                                Остается занятым
+                            </td>
+                            <td>
+                                Перемещаясь наслаивается на соседние элементы, <br> первоначальное место (будучи пустым)
+                                отталкивает
+                                соседние элементы
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+
+        </section>
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>
